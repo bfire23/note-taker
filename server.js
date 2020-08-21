@@ -5,7 +5,7 @@ const dbjson = require("./db/db.json");
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -64,14 +64,14 @@ app.post("/api/notes", function (req, res) {
     console.log(data);
 });
   
-  
-  
-  
 });
+  
+  
+  
 
 app.delete("/api/notes/:id", function (req, res) {
   const delFile = req.params.id;
-  console.log(choose);
+  console.log(delFile);
   fs.readFile("./db/db.json", "utf8", function (error, data) {
       if (error) {
           return console.log(error);
